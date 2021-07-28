@@ -8,10 +8,16 @@ class User < ApplicationRecord
 
   ROLES = ["User", "Admin"]
 
-  belongs_to :client
+  belongs_to :client, optional: true
 
+  before_create :setup
 
   def full_name
     first_name + " " + last_name
   end
+
+  def setup
+    self.role ||= "User"
+  end
+
 end

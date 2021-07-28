@@ -39,7 +39,7 @@
     <strong>Client:</strong>
   </td>
   <td>
-          <%= @user.client_id %>
+          <%= @user.client.name if @user.client %>
       </td>
 </tr>
 
