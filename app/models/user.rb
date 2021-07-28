@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   ROLES = ["User", "Admin"]
 
+  belongs_to :client
+
 
   def full_name
     first_name + " " + last_name

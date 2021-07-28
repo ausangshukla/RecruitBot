@@ -1,9 +1,9 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /clients or /clients.json
   def index
-    @clients = Client.all
+    #@clients = Client.all
   end
 
   # GET /clients/1 or /clients/1.json

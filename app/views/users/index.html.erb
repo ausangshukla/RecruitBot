@@ -13,7 +13,7 @@
       <th>First name</th>
       <th>Last name</th>
       <th>Role</th>
-      <th>Company</th>
+      <th>Client</th>
       <th></th>
     </tr>
   </thead>
@@ -24,7 +24,7 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.role %></td>
-        <td><%= user.company_id %></td>
+        <td><%= user.client.name %></td>
         <td>
           <%= link_to 'Show', user, class: "btn btn-primary" %>
           <%= link_to 'Edit', edit_user_path(user), class: "btn btn-primary" %>

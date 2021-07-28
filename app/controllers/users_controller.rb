@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    @users.includes(:client)
   end
 
   # GET /users/1 or /users/1.json
@@ -64,6 +64,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :role, :company_id)
+      params.require(:user).permit(:first_name, :last_name, :role, :client_id)
     end
 end

@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_07_28_043838) do
     t.string "first_name", limit: 80
     t.string "last_name", limit: 80
     t.string "role", limit: 10
-    t.integer "company_id"
+    t.integer "client_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2021_07_28_043838) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.index ["company_id"], name: "index_users_on_company_id"
+    t.index ["client_id"], name: "index_users_on_client_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
