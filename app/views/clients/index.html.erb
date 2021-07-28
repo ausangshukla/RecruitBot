@@ -1,0 +1,38 @@
+
+<p id="notice" class="alert" role="alert"><%= notice %></p>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+    <%= link_to 'New Client', new_client_path, class: "btn btn-primary" %>
+</div>
+
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Address</th>
+      <th>Activated</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.city %></td>
+        <td><%= client.address %></td>
+        <td><%= client.activated %></td>
+        <td>
+          <%= link_to 'Show', client, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_client_path(client), class: "btn btn-primary" %>
+          <%= link_to 'Delete', client, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
